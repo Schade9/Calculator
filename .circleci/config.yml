@@ -17,6 +17,11 @@ jobs:
       - image: circleci/node:16.10
     steps:
       - run: echo world
+  build:
+    - run:
+      name: "echo an environment variable that is part of our project"
+      command: |
+        echo $MY_ENV_VAR
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
