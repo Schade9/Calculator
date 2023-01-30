@@ -58,9 +58,9 @@ workflows:
       #     version: '16.10'
       #     # If you are using yarn, change the line below from "npm" to "yarn"
       #     pkg-manager: npm
-  test_env_vars:
-    jobs:
-      - build
+  # test_env_vars:
+  #   jobs:
+  #     - build
   # sharing files
   my_workflow:
     jobs:
