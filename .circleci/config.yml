@@ -11,16 +11,12 @@ jobs:
     docker:
       - image: circleci/node:16.10
     steps:
-      - run:
-        command: | 
-          echo "hello"
+      - run: echo hello
   print_world:
     docker:
       - image: circleci/node:16.10
     steps:
-      - run:
-        command: |
-          echo "world"
+      - run: echo world
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
@@ -29,7 +25,9 @@ workflows:
     # Inside the workflow, you define the jobs you want to run.
     jobs:
       - print_hello
-      - print_world
+      - print_world:
+          requires:
+            print_hello
       - node/test:
           # This is the node version to use for the `cimg/node` tag
           # Relevant tags can be found on the CircleCI Developer Hub
