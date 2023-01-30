@@ -33,7 +33,6 @@ workflows:
       - print_world:
           requires:
             - print_hello
-      - build
       # - node/test:
       #     # This is the node version to use for the `cimg/node` tag
       #     # Relevant tags can be found on the CircleCI Developer Hub
@@ -41,3 +40,6 @@ workflows:
       #     version: '16.10'
       #     # If you are using yarn, change the line below from "npm" to "yarn"
       #     pkg-manager: npm
+  test_env_vars:
+    jobs:
+      - build
