@@ -21,9 +21,7 @@ jobs:
     docker:
       - image: circleci/node:16.10
     steps:
-      - run:
-        command: |
-          echo $MY_ENV_VAR
+      - run: echo $MY_ENV_VAR
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
